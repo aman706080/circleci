@@ -2,16 +2,15 @@ version: 2.1
 jobs:
   build:
     docker:
-      - image: cimg/openjdk:8.0.442-node
-  # Ensure this is the correct image tag
+      - image: cimg/openjdk:8  # Update this line
     steps:
-      - checkout  # Pulls your code from the repository
+      - checkout
       - run:
           name: Compile Java Program
-          command: javac javatest.java  # Compile the Java file
+          command: javac javatest.java
       - run:
           name: Run Java Program
-          command: java javatest   # Run the compiled Java class file
+          command: java javatest
 workflows:
   version: 2
   build:
