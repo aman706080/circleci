@@ -13,7 +13,7 @@ jobs:
             javac javatest.java
       - run:
           name: Run Java Program
-          command: java javatest.java
+          command: java javatest
 workflows:
   version: 2
   build:
