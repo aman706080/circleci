@@ -2,7 +2,7 @@ version: 2.1
 jobs:
   build:
     docker:
-      - image: cimg/java:16   # Ensure this is the correct image tag
+      - image: cimg/java:16   
     steps:
       - checkout  # Pulls your code from the repository
       - run:
