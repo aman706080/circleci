@@ -1,21 +1,30 @@
-version: 2.1
+# version: 2.1
+# jobs:
+#   build:
+#     docker:
+#       - image: alpine:latest  
+#     steps:
+#       - checkout
+#       - run:
+#           name: Install Java and Compile Java Program
+#           command: |
+#             apk update
+#             apk add openjdk8
+#             javac javatest.java
+#       - run:
+#           name: Run Java Program
+#           command: java javatest
+# workflows:
+#   version: 2
+#   build:
+#     jobs:
+#       - build
+
+
 jobs:
   build:
     docker:
-      - image: alpine:latest  
+      - image: cimg/openjdk:23.0.2
     steps:
       - checkout
-      - run:
-          name: Install Java and Compile Java Program
-          command: |
-            apk update
-            apk add openjdk8
-            javac javatest.java
-      - run:
-          name: Run Java Program
-          command: java javatest
-workflows:
-  version: 2
-  build:
-    jobs:
-      - build
+      - run: java --version
