@@ -28,3 +28,5 @@ jobs:
     steps:
       - checkout
       - run: java --version
+      - run : javac javatest.java
+      - run : java javatest
