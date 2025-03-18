@@ -35,7 +35,7 @@
 jobs:
   build:
     docker:
-      - image: cimg/clojure:1.12.0-openjdk-8.0-node
+      - image: cimg/node:23.10.0
     steps:
       - checkout
-      - run: lein version
+      - run: node --version
