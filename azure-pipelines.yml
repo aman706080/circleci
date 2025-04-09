@@ -1,24 +1,21 @@
-# Maven
-# Build your Java project and run tests with Apache Maven.
-# Add steps that analyze code, save build artifacts, deploy, and more:
-# https://docs.microsoft.com/azure/devops/pipelines/languages/java
-
 trigger:
-- main
+  branches:
+    include:
+      - main
 
 pool:
-  pool: aman
+  name: aman
 
-- task: JavaToolInstaller@0
-  inputs:
-    versionSpec: '11'  
-    jdkArchitecture: 'x64' 
-    jdkSource: 'PreInstalled'
+steps:
+  - task: JavaToolInstaller@0
+    inputs:
+      versionSpec: '11'
+      jdkArchitecture: 'x64'
+      jdkSource: 'PreInstalled'
 
+  - checkout: self
 
-- checkout: self 
-
-- script: |
-    javac javatest.java  
-    java javatest        
-  displayName: 'Compile and Run HelloWorld Program'
+  - script: |
+      javac javatest.java
+      java javatest
+    displayName: 'Compile and Run Java Program'
