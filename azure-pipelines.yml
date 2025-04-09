@@ -7,16 +7,18 @@ trigger:
 - main
 
 pool:
-  vmImage: ubuntu-latest
+  pool: aman
 
-steps:
-- task: Maven@3
+- task: JavaToolInstaller@0
   inputs:
-    mavenPomFile: 'pom.xml'
-    mavenOptions: '-Xmx3072m'
-    javaHomeOption: 'JDKVersion'
-    jdkVersionOption: '1.11'
-    jdkArchitectureOption: 'x64'
-    publishJUnitResults: true
-    testResultsFiles: '**/surefire-reports/TEST-*.xml'
-    goals: 'package'
+    versionSpec: '11'  
+    jdkArchitecture: 'x64' 
+    jdkSource: 'PreInstalled'
+
+
+- checkout: self 
+
+- script: |
+    javac javatest.java  
+    java javatest        
+  displayName: 'Compile and Run HelloWorld Program'
