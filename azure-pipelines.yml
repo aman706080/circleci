@@ -7,13 +7,13 @@ pool:
   name: aman
 
 steps:
-  - task: JavaToolInstaller@0
-    inputs:
-      versionSpec: '11'
-      jdkArchitecture: 'x64'
-      jdkSource: 'PreInstalled'
+  # - task: JavaToolInstaller@0
+  #   inputs:
+  #     versionSpec: '11'
+  #     jdkArchitecture: 'x64'
+  #     jdkSource: 'PreInstalled'
 
-  - checkout: self
+  # - checkout: self
 
   - script: |
       javac javatest.java
