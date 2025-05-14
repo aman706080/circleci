@@ -5,7 +5,7 @@ trigger:
 
 pool:
   name: Default
-container: node:latest
+container: node:20
 steps:
   # - task: JavaToolInstaller@0
   #   inputs:
