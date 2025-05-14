@@ -5,7 +5,7 @@ trigger:
 
 pool:
   name: Default
-
+container: node:latest
 steps:
   # - task: JavaToolInstaller@0
   #   inputs:
@@ -15,7 +15,10 @@ steps:
 
   # - checkout: self
 
-  - script: |
-      javac javatest.java
-      java javatest
-    displayName: 'Compile and Run Java Program'
+  # - script: |
+  #     javac javatest.java
+  #     java javatest
+  #   displayName: 'Compile and Run Java Program'
+- script: |
+     id
+     sudo apt update && sudo apt install -y curl
